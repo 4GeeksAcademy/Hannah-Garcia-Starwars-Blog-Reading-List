@@ -1,3 +1,28 @@
-/* 
-    General Styles
-*/
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color for contrast */
+}
+
+.navbar {
+    background-color: #8b0000; /* Dark red color */
+}
+
+.card {
+    background-color: #1c1c1c; /* Dark card background */
+    color: #ffffff; /* Light text inside cards */
+}
+
+.footer {
+    background-color: #121212;
+    color: #999999;
+}
+
+.btn-outline-light {
+    border-color: #ff4500;
+    color: #ff4500;
+}
+
+.btn-outline-light:hover {
+    background-color: #ff4500;
+    color: #ffffff;
+}
