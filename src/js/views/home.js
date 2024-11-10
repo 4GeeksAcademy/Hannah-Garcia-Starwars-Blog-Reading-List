@@ -1,45 +1,42 @@
+import React from "react";
+import { Link } from "react-router-dom";
 
-import "../../styles/home.css";
-import { Card } from "../component/card";
-import React, { useState, useContext } from "react";
-import { Context } from "../store/appContext"
+const Home = () => {
+    return (
+        <div className="container text-center my-5">
+            <h1 className="display-3 text-warning">STAR WARS</h1>
+            <h2 className="text-light mb-5">A Visual Guide</h2>
+            <div className="row justify-content-center">
+                <div className="col-md-4 mb-4">
+                    <Link to="/characters" className="card bg-dark text-white border-0">
+                        <img src="https://starwars-visualguide.com/assets/img/characters/1.jpg" className="card-img" alt="Characters"
+                            style={{ height: "300px", objectFit: "cover" }} />
+                        <div className="card-img-overlay d-flex align-items-end justify-content-center">
+                            <h5 className="card-title bg-dark bg-opacity-75 p-2 rounded">CHARACTERS</h5>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-md-4 mb-4">
+                    <Link to="/vehicles" className="card bg-dark text-white border-0">
+                        <img src="https://starwars-visualguide.com/assets/img/vehicles/4.jpg" className="card-img" alt="Vehicles" 
+                            style={{ height: "300px", objectFit: "cover" }}/>
+                        <div className="card-img-overlay d-flex align-items-end justify-content-center">
+                            <h5 className="card-title bg-dark bg-opacity-75 p-2 rounded">VEHICLES</h5>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-md-4 mb-4">
+                    <Link to="/planets" className="card bg-dark text-white border-0">
+                        <img src="https://starwars-visualguide.com/assets/img/categories/planets.jpg" className="card-img" alt="Planets"
+                            style={{ height: "300px", objectFit: "cover" }} />
+                        <div className="card-img-overlay d-flex align-items-end justify-content-center">
+                            <h5 className="card-title bg-dark bg-opacity-75 p-2 rounded">PLANETS</h5>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-
-export const Home = () => {
-	const { store, actions } = useContext(Context);
-	return (
-		<div className="container">
-			<div className="d-flex flex-column w-100 mt-3 align-items-center">
-				<h1>Characters</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
-					{store.characters.map((item, index) => {
-						return (
-							<Card item={item} index={index} key={index}category="characters" />
-						)
-					})}
-				</div>
-			</div>
-			<div className="d-flex flex-column w-100 mt-3 align-items-center">
-				<h1>Planets</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
-					{store.planets.map((item, index) => {
-						return (
-							<Card item={item} index={index} key={index}category="planets" />
-						)
-					})}
-				</div>
-			</div>
-			<div className="d-flex flex-column w-100 mt-3 align-items-center">
-				<h1>Vehicles</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
-					{store.vehicles.map((item, index) => {
-						return (
-							<Card item={item} index={index} key={index}category="vehicles" />
-						)
-					})}
-				</div>
-			</div>
-			
-		</div>
-	);
-}
+export default Home;

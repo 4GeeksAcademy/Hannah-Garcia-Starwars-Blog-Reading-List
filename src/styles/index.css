@@ -26,3 +26,7 @@ body {
     background-color: #ff4500;
     color: #ffffff;
 }
+
+.title, .subtitle {
+    font-family: 'Star Jedi', sans-serif;
+}
